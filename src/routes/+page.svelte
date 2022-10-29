@@ -6,6 +6,12 @@
 	import Search from '$lib/search/Search.svelte';
 	import Sort from '$lib/sort/Sort.svelte';
 	import Voice from '$lib/voice/Voice.svelte';
+
+	let id = 1;
+
+	const setId = (e) => {
+		id = e.detail;
+	}
 </script>
 
 <Splitpanes 
@@ -18,7 +24,7 @@ class="default-theme" style="height: 100vh">
 	<Search/>
 	<div class="contacts">
 		<Sort />
-		<NameList />
+		<NameList on:personId={setId} />
 	</div>
 	</Pane>
 	<Pane>
@@ -27,7 +33,7 @@ class="default-theme" style="height: 100vh">
 				<header class="more">
 				<a href="">More</a>
 				</header>
-				<Profile />
+				<Profile userId={id} />
 			</Pane>
 			<Pane>Chat</Pane>
 		</Splitpanes>

@@ -2,17 +2,17 @@
     import SelectMessage from '$lib/selectMsg/SelectMessage.svelte';
     import {people} from '$lib/store';
     // import Eliza from './Eliza.svelte';
-
-
+    export let userId = 0;
+    
 </script>
-{#each people as person }
-    {#if person.id === 1}
+{#each $people as person }
+    {#if person.id === userId}
         <main>
             <div class="profile-container">
-                <div class="profile-bg">
+                <div class="profile-bg" style={`background-image: url('${'src/lib/images/social.jpg'}');`}>
                     <div class="name">
                         <div class=" ">{person.name}</div>
-                        <span class:yellow={person.favourite} class="star" on:click={()=>  person.favourite = true}>&star;</span>
+                        <span class="yellow star" >&star;</span>
                     </div>
                     <div class="bio">&lagran; {person.bio} &gamma; </div>
                 </div>
@@ -39,6 +39,7 @@
         background-size: cover;
         width: 100%;
         height: 100%;    
+        background-position: center;
     }
     .name {
         display: flex;
@@ -46,6 +47,7 @@
         padding: 10px;
         font-size: larger;
         font-weight: bold;
+        color: antiquewhite;
     }
     .name div{
         font-style: italic;
@@ -57,5 +59,6 @@
         text-align: center;
         font-size: 16px;
         background: rgba(0,0,0,0.3);
+        color: aliceblue;
     }
 </style>
