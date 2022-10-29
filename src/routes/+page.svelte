@@ -10,7 +10,7 @@
 
 <Splitpanes 
 class="default-theme" style="height: 100vh">
-	<Pane minSize={0} maxSize={40}>
+	<Pane minSize={0} >
 		<header class="groups">
 		<a href="#">Groups</a>
 		<a href="#">Edits</a>
@@ -48,6 +48,7 @@ header {
 
 .contacts {
 	display: flex;
+	padding: 0 !important;
 }
 
 .splitpanes {
