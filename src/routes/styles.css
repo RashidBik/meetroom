@@ -1,9 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
-@import '@fontsource/fira-mono';
 
 :root {
 	--font-body: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
@@ -46,7 +40,7 @@ p {
 }
 
 a {
-	color: var(--color-theme-1);
+	color: white;
 	text-decoration: none;
 }
 
@@ -81,16 +75,6 @@ pre {
 	flex-direction: column;
 	justify-content: center;
 	margin: 0 auto;
-}
-
-input,
-button {
-	font-size: inherit;
-	font-family: inherit;
-}
-
-button:focus:not(:focus-visible) {
-	outline: none;
 }
 
 @media (min-width: 720px) {

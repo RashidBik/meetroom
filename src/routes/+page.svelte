@@ -1,59 +1,84 @@
 <script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	import { Pane, Splitpanes } from 'svelte-splitpanes';
+	// import Eliza from '$lib/Eliza/Eliza.svelte';
+	import NameList from '$lib/list/NameList.svelte';
+	import Profile from '$lib/profile/Profile.svelte';
+	import Search from '$lib/search/Search.svelte';
+	import Sort from '$lib/sort/Sort.svelte';
+	import Voice from '$lib/voice/Voice.svelte';
 </script>
 
-<svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
-</svelte:head>
-
-<section>
-	<h1>
-		<span class="welcome ">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2 class="bg-red-900">
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
-</section>
+<Splitpanes 
+class="default-theme" style="height: 100vh">
+	<Pane minSize={0} maxSize={40}>
+		<header class="groups">
+		<a href="#">Groups</a>
+		<a href="#">Edits</a>
+	</header>
+	<Search/>
+	<div class="contacts">
+		<Sort />
+		<NameList />
+	</div>
+	</Pane>
+	<Pane>
+		<Splitpanes class="default-theme" horizontal="{true}">
+			<Pane minSize={15} maxSize={45}>
+				<header class="more">
+				<a href="">More</a>
+				</header>
+				<Profile />
+			</Pane>
+			<Pane>Chat</Pane>
+		</Splitpanes>
+	</Pane>
+</Splitpanes>
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
+.groups {
+	display: flex;
+	justify-content: space-between;
+}
+.more {text-align: right;  }
+header {
+	background: rgb(199, 107, 3);
+	padding: 10px;
 
-	h1 {
-		width: 100%;
-	}
+}
 
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
+.contacts {
+	display: flex;
+}
 
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
+.splitpanes {
+	background-color: #f8f8f8;
+}
+
+.splitpanes__splitter {
+	background-color: #ccc;
+	position: relative;
+}
+.splitpanes__splitter:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	transition: opacity 0.4s;
+	background-color: rgba(255, 0, 0, 0.3);
+	opacity: 0;
+	z-index: 1;
+}
+.splitpanes__splitter:hover:before {
+	opacity: 1;
+}
+.splitpanes--vertical > .splitpanes__splitter:before {
+	left: -30px;
+	right: -30px;
+	height: 100%;
+}
+.splitpanes--horizontal > .splitpanes__splitter:before {
+	top: -30px;
+	bottom: -30px;
+	width: 100%;
+}
 </style>
