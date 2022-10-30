@@ -1,3 +1,4 @@
+import adapterGhpages from "svelte-adapter-ghpages";
 import preprocess from "svelte-preprocess";
 import adapter from '@sveltejs/adapter-auto';
 
@@ -9,8 +10,17 @@ const config = {
 		}),
 	  ],
 	kit: {
-		adapter: adapter()
-	}
+		adapter: adapter(),
+		paths: {
+			base: "/your-repo-name",
+		  },
+		adapter: adapterGhpages(
+		pages: 'build',
+		assets: 'build',
+		fallback: null
+		),
+	};
+
 };
 
 export default config;
