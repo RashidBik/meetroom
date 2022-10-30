@@ -1,13 +1,7 @@
-
-<main>
-	Eliza text
-</main>
-
-
-<!-- <script>
-	// import Eliza from 'elizabot';
+<script>
+	import Eliza from 'elizabot';
 	import { beforeUpdate, afterUpdate } from 'svelte';
-	let Eliza;
+	
 	let div;
 	let autoscroll;
 
@@ -109,4 +103,4 @@
 		color: white;
 		border-radius: 1em 1em 0 1em;
 	}
-</style> -->
+</style>

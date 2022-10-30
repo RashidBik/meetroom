@@ -9,7 +9,7 @@
 
 	let id = 1;
 
-	const setId = (e) => {
+	const setId = (/** @type {{ detail: number; }} */ e) => {
 		id = e.detail;
 	}
 </script>

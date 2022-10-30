@@ -3,7 +3,7 @@ import { writable } from "svelte/store"
 export var people = writable(
     [
         {
-            id: 1,
+            id: 4,
             username: 'ali123',
             name: 'Ali',
             bio: 'I never give up',
@@ -27,12 +27,20 @@ export var people = writable(
             favourite: true
         },
         {
-            id: 4,
+            id: 1,
             username: 'yalda77',
             name: 'Yalda Yagana',
             bio: 'part of the whole',
             profile_pic: '',
             favourite: true
-        }
+        },
+        {
+            id: 5,
+            username: 'yalda77',
+            name: 'Boda Nezami',
+            bio: 'Careful about changes',
+            profile_pic: '',
+            favourite: false
+        },
     ]
 );

@@ -1,14 +1,26 @@
 <script>
     import {people} from '$lib/store';
-	import { createEventDispatcher } from 'svelte';
+	import { createEventDispatcher, onMount } from 'svelte';
 
     // export let contacIid;
+    /**
+	 * @type {{ id: number; username: string; name: string; bio: string; profile_pic: string; favourite: boolean; }[]}
+	 */
+    let sortedContacts;
     const dispatch = createEventDispatcher();
+    const unsubscribe = people.subscribe((currentPeople) => {
+        sortedContacts = currentPeople; 
+        sortedContacts.sort((a,b) => { return a.id - b.id});
+    })
 
+    onMount(()=> {
+        unsubscribe();
+    })
 </script>
 
 <div class="main-container">
-    {#each $people as person (person.id) }
+    {#each sortedContacts as person (person.id) }
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
         <div class="persons-container" on:click={()=> dispatch('personId',person.id)}>
             <div class="persons-pic">
                 <img src="src/lib/images/profile.jpg" alt="">

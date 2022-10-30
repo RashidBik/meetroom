@@ -34,7 +34,11 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"cxjs": "^17.4.0",
+		"elizabot": "^0.0.3",
+		"firebase": "^9.13.0",
 		"interactjs": "^1.10.17",
-		"svelte-splitpanes": "^0.7.3"
+		"rxfire": "^6.0.3",
+		"svelte-splitpanes": "^0.7.0"
 	}
 }
