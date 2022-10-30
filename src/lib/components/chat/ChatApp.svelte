@@ -14,19 +14,19 @@
     
     let message = '';
 
-    // const query = db.collection("chats").orderBy("sentAt");
-    // // @ts-ignore
-    // const chats = collectionData(query, "id").pipe(startWith([]));
+    const query = db.collection("chats").orderBy("sentAt");
+    // @ts-ignore
+    const chats = collectionData(query, "id").pipe(startWith([]));
 
-    // const sendMessage = () => {
-    //     db.collection("chats").add({
-    //         uid: user.uid,
-    //         message: message,
-    //         avatar: user.photoURL,
-    //         sentAt: +new Date()
-    //     });
-    //     message = "";
-    // }
+    const sendMessage = () => {
+        db.collection("chats").add({
+            uid: user.uid,
+            message: message,
+            avatar: user.photoURL,
+            sentAt: +new Date()
+        });
+        message = "";
+    }
 
 </script>
 

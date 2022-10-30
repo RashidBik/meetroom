@@ -2,6 +2,7 @@
     <a href="/" class="call">Message</a>
     <a href="/" class="call">Voice</a>
     <a href="/" class="call">Video</a>
+    <a href="/" class="call">Story</a>
 </div>
 
 <style>

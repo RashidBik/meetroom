@@ -8,9 +8,12 @@
 	 */
     let sortedContacts;
     const dispatch = createEventDispatcher();
+    
     const unsubscribe = people.subscribe((currentPeople) => {
         sortedContacts = currentPeople; 
-        sortedContacts.sort((a,b) => { return a.id - b.id});
+        sortedContacts.filter((srt) => {
+            srt.name === 'A'
+        });
     })
 
     onMount(()=> {

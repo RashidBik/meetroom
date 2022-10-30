@@ -8,10 +8,16 @@
 	import Voice from '$lib/voice/Voice.svelte';
 
 	let id = 1;
+	let idx = '*';
 
 	const setId = (/** @type {{ detail: number; }} */ e) => {
 		id = e.detail;
 	}
+	const alphabets = (e) => {
+		idx = e.detail
+		console.log(idx);
+	}
+	
 </script>
 
 <Splitpanes 
@@ -23,7 +29,7 @@ class="default-theme" style="height: 100vh">
 	</header>
 	<Search/>
 	<div class="contacts">
-		<Sort />
+		<Sort on:alphabets={alphabets} />
 		<NameList on:personId={setId} />
 	</div>
 	</Pane>
