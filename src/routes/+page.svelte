@@ -9,34 +9,29 @@
 
 	let id = 1;
 
-	let idx='A';
-
 	const setId = (/** @type {{ detail: number; }} */ e) => {
 		id = e.detail;
 	}
-	const alphabets = (/** @type {{ detail: string; }} */ e) => {
-		idx = e.detail
-		return idx;
-	}
+	
 	
 </script>
 
 <Splitpanes 
 class="default-theme" style="height: 100vh">
-	<Pane>
+	<Pane minSize={0} >
 		<header class="groups">
 		<a href="#">Groups</a>
 		<a href="#">Edits</a>
 	</header>
 	<Search/>
-	<!-- <div class="contacts"> -->
-		<!-- <Sort on:alphabets={alphabets} /> -->
-		<NameList idx={idx} on:personId={setId} />
-	<!-- </div> -->
+	<div class="contacts">
+		<Sort />
+		<NameList on:personId={setId} />
+	</div>
 	</Pane>
 	<Pane>
 		<Splitpanes class="default-theme" horizontal="{true}">
-			<Pane minSize={'15'} maxSize={'45'}>
+			<Pane minSize={15} maxSize={45}>
 				<header class="more">
 				<a href="">More</a>
 				</header>
@@ -59,7 +54,10 @@ header {
 
 }
 
-
+.contacts {
+	display: flex;
+	padding: 0 !important;
+}
 
 .splitpanes {
 	background-color: #f8f8f8;
