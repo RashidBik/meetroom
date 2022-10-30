@@ -2,18 +2,6 @@
 	import { createEventDispatcher } from "svelte";
 
 
-    let alphabete = [
-        '#',
-        '*','A','B',
-        'C','D','E',
-        'F','G','H',
-        'J','K','L',
-        'M','N','O',
-        'P','Q','R',
-        'S','T','U',
-        'V','W','X',
-        'Y','Z','0'
-        ];
     const dispatch = createEventDispatcher();
 
 </script>

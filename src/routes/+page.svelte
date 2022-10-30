@@ -8,34 +8,35 @@
 	import Voice from '$lib/voice/Voice.svelte';
 
 	let id = 1;
-	let idx = '*';
+
+	let idx='A';
 
 	const setId = (/** @type {{ detail: number; }} */ e) => {
 		id = e.detail;
 	}
-	const alphabets = (e) => {
+	const alphabets = (/** @type {{ detail: string; }} */ e) => {
 		idx = e.detail
-		console.log(idx);
+		return idx;
 	}
 	
 </script>
 
 <Splitpanes 
 class="default-theme" style="height: 100vh">
-	<Pane minSize={0} >
+	<Pane>
 		<header class="groups">
 		<a href="#">Groups</a>
 		<a href="#">Edits</a>
 	</header>
 	<Search/>
-	<div class="contacts">
-		<Sort on:alphabets={alphabets} />
-		<NameList on:personId={setId} />
-	</div>
+	<!-- <div class="contacts"> -->
+		<!-- <Sort on:alphabets={alphabets} /> -->
+		<NameList idx={idx} on:personId={setId} />
+	<!-- </div> -->
 	</Pane>
 	<Pane>
 		<Splitpanes class="default-theme" horizontal="{true}">
-			<Pane minSize={15} maxSize={45}>
+			<Pane minSize={'15'} maxSize={'45'}>
 				<header class="more">
 				<a href="">More</a>
 				</header>
@@ -58,10 +59,7 @@ header {
 
 }
 
-.contacts {
-	display: flex;
-	padding: 0 !important;
-}
+
 
 .splitpanes {
 	background-color: #f8f8f8;
