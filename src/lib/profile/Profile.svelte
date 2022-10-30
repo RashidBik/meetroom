@@ -1,5 +1,6 @@
 <script>
-    import SelectMessage from '$lib/selectMsg/SelectMessage.svelte';
+    import ChatApp from '$lib/components/chat/ChatApp.svelte';
+import SelectMessage from '$lib/selectMsg/SelectMessage.svelte';
     import {people} from '$lib/store';
     // import Eliza from './Eliza.svelte';
     export let userId = 0;
@@ -19,7 +20,7 @@
             </div>
             <SelectMessage />
             <div class="">
-                <!-- <Eliza /> -->
+              <ChatApp />
             </div>
         </main>
     {/if}   
