@@ -33,7 +33,7 @@ class="default-theme" style="height: 100vh">
 	</Pane>
 	<Pane>
 		<Splitpanes class="default-theme" horizontal="{true}">
-			<Pane minSize={15} maxSize={45}>
+			<Pane minSize={'0'} maxSize={'45'}>
 				<header class="more">
 				<a href="">More</a>
 				</header>

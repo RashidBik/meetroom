@@ -14,7 +14,7 @@
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <div class="persons-container" on:click={()=> dispatch('personId',person.id)}>
             <div class="persons-pic">
-                <img src="src/lib/images/profile.jpg" alt="">
+                <img src="{person.profile_pic}" alt="">
             </div>
             <div class="name-date">
                 <span class="persons-name">{person.name}</span>
@@ -46,10 +46,10 @@
     }
     .persons-pic img {
         display: block;
-        width: 33px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
         margin: 0 !important;
-        border: 2px solid black;
+        border: 1px solid black;
         border-radius: 50%;
     }
     .name-date {

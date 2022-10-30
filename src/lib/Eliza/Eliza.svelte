@@ -61,7 +61,8 @@
 		{/each}
 	</div>
 	<div class="chat-plate">
-		<input on:keydown={handleKeydown}>
+		<input on:keydown={handleKeydown} placeholder="Say Hey ...">
+		<!-- <button></button> -->
 	</div>
 </div>
 
@@ -70,8 +71,9 @@
 		display: flex;
 		flex-direction: column;
 		height: 100%;
-		max-width: 320px;
+		max-width: 100%;
 		background: lightblue;
+		padding: 10px;
 	}
 
 	.scrollable {

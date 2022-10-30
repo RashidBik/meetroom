@@ -10,7 +10,7 @@
     {#if person.id === userId}
         <main>
             <div class="profile-container">
-                <div class="profile-bg" style={`background-image: url('${'src/lib/images/social.jpg'}');`}>
+                <div class="profile-bg" style={`background: url('${person.profile_pic}');`}>
                     <div class="name">
                         <div class=" ">{person.name}</div>
                         <span class="yellow star" >&star;</span>
@@ -33,7 +33,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        background: url('public/profile.jpg');
+        /* background: url('src/lib/images/Girl.jpg'); */
         background-size: cover;
         width: 100%;
         height: 100%;    
