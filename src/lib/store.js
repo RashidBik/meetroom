@@ -1,6 +1,6 @@
 import { writable } from "svelte/store"
 
-export var people = writable(
+export const people = writable(
     [
         {
             id: 4,

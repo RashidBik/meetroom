@@ -4,13 +4,13 @@
     /**
 	 * @type {{ id: number; username: string; name: string; bio: string; profile_pic: string; favourite: boolean; }[]}
 	 */
-    let sortedContacts = $people;
+    // let sortedContacts = $people;
     const dispatch = createEventDispatcher();
 
 </script>
 
 <div class="main-container">
-    {#each sortedContacts as person (person.id) }
+    {#each $people as person (person.id) }
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <div class="persons-container" on:click={()=> dispatch('personId',person.id)}>
             <div class="persons-pic">

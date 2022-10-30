@@ -1,5 +1,4 @@
 <script>
-	import { createEventDispatcher } from "svelte";
     import {people} from '$lib/store';
 
     let alphabete = [
@@ -14,13 +13,20 @@
         'V','W','X',
         'Y','Z','0'
         ];
-    const sortPeople = (abc) => {
-        people.update(currentPeople => {
-            let setPeople = [...currentPeople];
-            let updatedPeople = setPeople.find(sorted => {
-                sorted.name === `/^${abc}/g`
+    
+        
+    const sortPeople = (/** @type {string} */ abc) => {
+        people.update((currentPeople) => {
+            return currentPeople.filter(sorted => {
+                if (abc === '*') {
+                    sorted.name === `/*/g`
+                } else if (abc === '#') {
+                    sorted.favourite === true
+                } else {
+                    sorted.name === `/^${abc}/g`
+                }
+
             })
-            return updatedPeople;
         })
     }
 
@@ -29,7 +35,7 @@
 <div class="abc-sort">
     {#each alphabete as abc (abc) }
         <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <div on:click={()=> sortPeople()} 
+        <div on:click={()=> sortPeople(abc)} 
         class="abc-row">{abc}</div>
     {/each}
 </div>
