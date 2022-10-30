@@ -1,11 +1,13 @@
 <script>
 	import { Pane, Splitpanes } from 'svelte-splitpanes';
-	// import Eliza from '$lib/Eliza/Eliza.svelte';
+	import Eliza from '$lib/Eliza/Eliza.svelte';
 	import NameList from '$lib/list/NameList.svelte';
 	import Profile from '$lib/profile/Profile.svelte';
 	import Search from '$lib/search/Search.svelte';
 	import Sort from '$lib/sort/Sort.svelte';
 	import Voice from '$lib/voice/Voice.svelte';
+	import ChatApp from "$lib/components/chat/ChatApp.svelte";
+
 
 	let id = 1;
 
@@ -37,7 +39,9 @@ class="default-theme" style="height: 100vh">
 				</header>
 				<Profile userId={id} />
 			</Pane>
-			<Pane>Chat</Pane>
+			<Pane>
+				<Eliza />
+			</Pane>
 		</Splitpanes>
 	</Pane>
 </Splitpanes>

@@ -34,6 +34,7 @@
 			const reply = eliza.transform(text);
 
 			setTimeout(() => {
+				// @ts-ignore
 				comments = comments.concat({
 					author: 'eliza',
 					text: '...',
@@ -52,8 +53,6 @@
 </script>
 
 <div class="chat">
-	<h1>Eliza</h1>
-
 	<div class="scrollable" bind:this={div}>
 		{#each comments as comment}
 			<article class={comment.author}>
@@ -61,8 +60,9 @@
 			</article>
 		{/each}
 	</div>
-
-	<input on:keydown={handleKeydown}>
+	<div class="chat-plate">
+		<input on:keydown={handleKeydown}>
+	</div>
 </div>
 
 <style>
@@ -71,6 +71,7 @@
 		flex-direction: column;
 		height: 100%;
 		max-width: 320px;
+		background: lightblue;
 	}
 
 	.scrollable {
@@ -102,5 +103,21 @@
 		background-color: #0074D9;
 		color: white;
 		border-radius: 1em 1em 0 1em;
+	}
+	.chat-plate {
+		background: rgb(235, 230, 230);
+		padding: 5px;
+		border-radius: 50px;
+
+	}
+	input {
+		padding: 8px;
+		border-radius: 50px;
+		width: 80%;
+		background: none;
+		margin-left: 4px;
+		border: none;
+		outline:none;
+		
 	}
 </style>

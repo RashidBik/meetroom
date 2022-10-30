@@ -37,6 +37,7 @@
 		"cxjs": "^17.4.0",
 		"elizabot": "^0.0.3",
 		"firebase": "^9.13.0",
+		"firebase-admin": "^11.2.0",
 		"interactjs": "^1.10.17",
 		"rxfire": "^6.0.3",
 		"svelte-splitpanes": "^0.7.0"

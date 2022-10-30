@@ -1,5 +1,5 @@
 <script>
-    // import ChatApp from '$lib/components/chat/ChatApp.svelte';
+    import ChatApp from '$lib/components/chat/ChatApp.svelte';
     import SelectMessage from '$lib/selectMsg/SelectMessage.svelte';
     import {people} from '$lib/store';
     // import Eliza from './Eliza.svelte';
@@ -19,9 +19,6 @@
                 </div>
             </div>
             <SelectMessage />
-            <div class="">
-              <!-- <ChatApp /> -->
-            </div>
         </main>
     {/if}   
 {/each}

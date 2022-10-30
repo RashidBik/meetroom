@@ -1,21 +1,17 @@
-<script>
+<!-- <script>
     import {db} from "$lib/firbase"
     import {collectionData} from "rxfire/firestore";
     import {startWith} from "rxjs/operators";
-
-    /**
-	 * @type {{ uid: any; photoURL: any; }}
-	 */
+    {@debug db}
+    console.log(db);
      export let user;
-    /**
-	 * @type {any}
-	 */
+ 
      export let logout;
     
     let message = '';
 
     const query = db.collection("chats").orderBy("sentAt");
-    // @ts-ignore
+    
     const chats = collectionData(query, "id").pipe(startWith([]));
 
     const sendMessage = () => {
@@ -31,10 +27,6 @@
 </script>
 
 <main>
-    <div class="header">
-        <div class="logo">Chatroom</div>
-        <button on:click={logout}>Logout</button>
-    </div>
     <div class="message">
         {#each $chats as chat }
             {#if user.uid == chat.uid}
@@ -55,7 +47,7 @@
             {/if}
         {/each}
     </div>
-    <form>
+    <form class="form">
         <input type="text" bind:value={message}>
         <button on:click={sendMessage}>
             <i class="fa fa-paper-plane"></i>
@@ -68,15 +60,7 @@
         background: #eee;
         height: 100%;
     }
-    .header{
-        width: 100%;
-        height: 50px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0px 10px;
-        border-bottom: 1px solid #000;
-    }
+
     .header .logo {
         font-size: 15px;
         font-weight: bold;
@@ -93,6 +77,7 @@
     }
     .form {
         display: flex;
+        justify-content: end;
         width: 100%;
         height: 40px;
         border-top: 1px solid #000;
@@ -118,11 +103,11 @@
     }
     .message::-webkit-scrollbar-thumb {
         width: 4px;
-        background: #000;
+        /* background: #000; */
     }
     .message .message {
         margin: 10px 0px;
         display: flex;
     }
     
-</style>
+</style> -->

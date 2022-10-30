@@ -1,30 +1,24 @@
-// Import the functions you need from the SDKs you need
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/firestore"
-// import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { initializeApp, applicationDefault, cert } from 'firebase-admin/app';
+import { getFirestore, Timestamp, FieldValue } from 'firebase-admin/firestore';
+import { getAuth } from "firebase/auth";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyBfJCiL-TantQmyK_394U-t6220VxcQ4mY",
-  authDomain: "meetroom-cd1e0.firebaseapp.com",
-  projectId: "meetroom-cd1e0",
-  storageBucket: "meetroom-cd1e0.appspot.com",
-  messagingSenderId: "526833367122",
-  appId: "1:526833367122:web:ebbf054837fec365abc78b",
-  measurementId: "G-22DNE4JP60"
+  apiKey: "AIzaSyBPdZ_4-jsc1bxvhcb9-J32ziTtT1ppCEw",
+  authDomain: "meetroom-10e18.firebaseapp.com",
+  projectId: "meetroom-10e18",
+  storageBucket: "meetroom-10e18.appspot.com",
+  messagingSenderId: "498512767474",
+  appId: "1:498512767474:web:bea4ac744d7dd9c3bba36b"
 };
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
+initializeApp(firebaseConfig);
 
-// @ts-ignore
-export const auth = firebase.auth();
-// @ts-ignore
-export const googleProvider = new firebase.auth.GoogleAuthProvider();
-// @ts-ignore
-export const db = firebase.firestore();
+
+// export const auth = getAuth();
+
+// export const provider = new firebase.auth.OAuthProvider('oidc.my-provider');
+// provider.addScope('offline_access');
+// firebase.auth().signInWithPopup(provider);
+
+// export const db = getFirestore();
